@@ -1,11 +1,20 @@
-export class Recipe {
-  public name: string;
-  public description: string;
-  public imagePath: string;
+import { Ingredient } from '../shared/ingriedients.model';
 
-  constructor(name: string, desc: string, image: string) {
-    this.name = name;
-    this.description = desc;
-    this.imagePath = image;
-  }
+export class Recipe {
+   public name: string;
+   public description: string;
+   public imagePath: string;
+   public ingredients: Ingredient[];
+
+   constructor(
+      name: string,
+      desc: string,
+      image: string,
+      ingredients: Ingredient[]
+   ) {
+      this.name = name;
+      this.description = desc;
+      this.imagePath = image;
+      this.ingredients = ingredients;
+   }
 }
