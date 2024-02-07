@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+   Component,
+   Input,
+   OnChanges,
+   OnInit,
+   SimpleChanges,
+} from '@angular/core';
 
 @Component({
    selector: 'app-root',
@@ -6,5 +12,9 @@ import { Component } from '@angular/core';
    styleUrl: './app.component.css',
 })
 export class AppComponent {
-  
+   inputText: string = '';
+
+   onInputChange(newValue: string) {
+      console.log('Input changed:', newValue);
+   }
 }
