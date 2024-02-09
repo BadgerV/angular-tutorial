@@ -95,6 +95,7 @@ export class RecipeService {
    }
 
    getRecipe(index: number) {
+      console.log(this.recipes.slice()[index]);
       return this.recipes.slice()[index];
    }
 

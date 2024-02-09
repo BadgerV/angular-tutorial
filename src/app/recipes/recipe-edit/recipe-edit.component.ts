@@ -25,7 +25,6 @@ export class RecipeEditComponent implements OnInit {
          this.id = +params['id'];
 
          this.editMode = typeof this.id === 'number' && this.id >= 0;
-         console.log(this.editMode);
 
          this.initForm();
       });
@@ -38,7 +37,6 @@ export class RecipeEditComponent implements OnInit {
       let recipeIngredient = new FormArray([]);
 
       if (this.editMode) {
-         console.log('working');
          const recipe = this.recipeService.getRecipe(this.id);
 
          recipeName = recipe.name;
