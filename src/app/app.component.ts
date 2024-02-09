@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
+import { LogginService } from './logging.service';
 
 @Component({
    selector: 'app-root',
@@ -16,10 +17,14 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent implements OnInit {
    inputText: string = '';
 
-   constructor(private authService: AuthService) {}
+   constructor(
+      private authService: AuthService,
+      private loggingService: LogginService
+   ) {}
 
    ngOnInit(): void {
       this.authService.autoLogin();
+      this.loggingService.printLog('Hello form App componetn ngOnint');
    }
 
    onInputChange(newValue: string) {

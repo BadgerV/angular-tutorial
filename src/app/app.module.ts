@@ -13,15 +13,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 
 import { RecipeService } from './recipes/recipe.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
    declarations: [AppComponent, HeaderComponent, PageNotFoundComponent],
@@ -30,11 +25,9 @@ import { AuthModule } from './auth/auth.module';
 
       HttpClientModule,
       AppRoutingModule,
-      RecipesModule,
-      ShoppingListModule,
+
       SharedModule,
       CoreModule,
-      AuthModule,
    ],
    bootstrap: [AppComponent],
 })
