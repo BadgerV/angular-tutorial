@@ -9,7 +9,6 @@ import {
 import { AuthService } from './auth/auth.service';
 import { LogginService } from './logging.service';
 
-
 //just a frivolous comments
 @Component({
    selector: 'app-root',
