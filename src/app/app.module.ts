@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 
+import { StoreModule } from '@ngrx/store';
+import { shoppinglistReducer } from './shopping-list/store/shopping-list.reducer';
+
 @NgModule({
    declarations: [AppComponent, HeaderComponent, PageNotFoundComponent],
    imports: [
@@ -25,6 +28,7 @@ import { CoreModule } from './core.module';
 
       HttpClientModule,
       AppRoutingModule,
+      StoreModule.forRoot({ shoppingList: shoppinglistReducer }),
 
       SharedModule,
       CoreModule,
