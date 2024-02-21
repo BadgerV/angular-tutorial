@@ -19,7 +19,10 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 
 import { StoreModule } from '@ngrx/store';
-import { shoppinglistReducer } from './shopping-list/store/shopping-list.reducer';
+
+import * as fromApp from './store/app.reducer';
+import { AuthEffects } from './auth/store/auth.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
    declarations: [AppComponent, HeaderComponent, PageNotFoundComponent],
@@ -28,7 +31,8 @@ import { shoppinglistReducer } from './shopping-list/store/shopping-list.reducer
 
       HttpClientModule,
       AppRoutingModule,
-      StoreModule.forRoot({ shoppingList: shoppinglistReducer }),
+      StoreModule.forRoot(fromApp.appReducer),
+      EffectsModule.forRoot([AuthEffects]),
 
       SharedModule,
       CoreModule,
