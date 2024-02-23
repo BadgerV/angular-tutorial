@@ -122,9 +122,7 @@ export class AuthService {
       return throwError(errorMessage);
    }
 
-   autoLogin() {
-     
-   }
+   autoLogin() {}
 
    private handleAuthentication(
       email: string,
@@ -142,6 +140,7 @@ export class AuthService {
             userId: userId,
             token: token,
             expirationDate: expirationDate,
+            redirect: false,
          })
       );
       this.autoLogout(expiresIn * 1000);

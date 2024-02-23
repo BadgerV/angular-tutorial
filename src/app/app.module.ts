@@ -23,6 +23,8 @@ import { StoreModule } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
 import { AuthEffects } from './auth/store/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { RecipeEffetcs } from './recipes/store/recipe.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
    declarations: [AppComponent, HeaderComponent, PageNotFoundComponent],
@@ -32,7 +34,8 @@ import { EffectsModule } from '@ngrx/effects';
       HttpClientModule,
       AppRoutingModule,
       StoreModule.forRoot(fromApp.appReducer),
-      EffectsModule.forRoot([AuthEffects]),
+      EffectsModule.forRoot([AuthEffects, RecipeEffetcs]),
+      StoreRouterConnectingModule.forRoot(),
 
       SharedModule,
       CoreModule,
